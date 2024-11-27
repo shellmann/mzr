@@ -1,0 +1,316 @@
+/* Our default values set as CSS variables */
+/* Used Coolors palette: https://coolors.co/palette/264653-2a9d8f-e9c46a-f4a261-e76f51 */
+:root {
+  --color-headlines: #FAF8F8;
+  /* --color-headlines: #264653; */
+  --color-bg: #BB010B;
+  /* --color-bg: #E9C46A; */
+  --color-text-main: #FAF8F8;
+  --color-primary: #CD1624;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  /* --font-family: "HK Grotesk";
+  --font-family-header: "HK Grotesk"; */
+  --font-family: "KoHo";
+  --font-family-header: "KoHo";
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Import fonts */
+/* @font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+} */
+
+/* Our remix on glitch button */
+.btn--remix {
+  font-family: KoHo;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  line-height: 1rem;
+  font-weight: 500;
+  height: 2.75rem;
+  align-items: center;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #ffffff;
+  white-space: nowrap;
+  margin-left: auto;
+}
+.btn--remix img {
+  margin-right: 0.5rem;
+}
+.btn--remix:hover {
+  background-color: #d0fff1;
+}
+
+/* Navigation grid */
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto 0;
+  padding: 1rem 0 0.75rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 4px solid #fff;
+}
+
+.footer a:not(.btn--remix):link,
+a:not(.btn--remix):visited {
+  font-family: KoHo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: none;
+  border-style: none;
+}
+.footer a:hover {
+  background: var(--color-primary);
+}
+
+.footer .links {
+  padding: 0.5rem 1rem 1.5rem;
+  white-space: nowrap;
+}
+
+.divider {
+  color: var(--color-text-main);
+  padding: 0 1rem;
+}
+/******************************************************************************
+END default styles
+******************************************************************************/
+
+body {
+  font-family: KoHo;
+  background-color: var(--color-bg);
+}
+
+/* Page structure */
+.wrapper {
+  min-height: var(--wrapper-height);
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
+}
+.content {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  max-width: 600px;
+}
+
+p,
+label {
+  font-size: 1.25rem;
+}
+
+/* Title h1 style */
+h1 {
+  color: var(--color-headlines);
+  font-family: KoHo;
+  font-style: normal;
+  font-weight: bold;
+  /*font-size: 100px;*/
+  line-height: 105%;
+  margin: 2rem 0 0;
+}
+
+/* Very light scaling for our illustration */
+.illo-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.illustration {
+  max-width: 100%;
+  max-height: 150px;
+  margin-top: 1rem;
+}
+
+/* Styles for our poll form and its results */
+.item-form,
+.item-list {
+  padding: 8px 8px 8px 1.8rem;
+  border-radius: 8px;
+}
+.item-form button:hover {
+  cursor: pointer;
+  box-shadow: -8px 4px 20px var(--color-primary);
+}
+
+.indented-text {
+  padding: 0px 8px 8px 1.8rem;
+}
+
+button,
+input {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 100%;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+button {
+  padding: 0.5rem 1rem;
+}
+label {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Instructions */
+.instructions {
+  margin: 1rem auto 0;
+}
+.instructions p {
+  font-size: 1rem;
+}
+h2 {
+  /* color: #1e90ff; */
+  color: var(--color-headlines);
+}
+
+/* Admin page */
+table {
+  text-align: left;
+  border-collapse: collapse;
+  /* background-color: #fdf5e6; */
+  background-color: #c70000;
+  color: var(--color-text-main);
+}
+td,
+th {
+  /* border: 2px solid #ffffff; */
+  border: 2px solid #940108;
+  padding: 0.5rem;
+}
+p a {
+  text-decoration: none;
+  font-weight: bold;
+}
+p.error,
+p.error a:link,
+p.error a:visited {
+  /* color: #1e90ff; */
+  color: var(--color-headlines);
+}
+.results {
+  padding-top: 10px;
+}
+.w3-panel {
+  padding: 0.01em 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.w3-pale-green,
+.w3-hover-pale-green:hover {
+  color: #fff !important;
+  /* background-color: #ddffdd !important; */
+  background-color: #006F57 !important;
+  border: 1px solid #00503F;
+  border-radius: 5px;
+}
+.w3-pale-red,
+.w3-hover-pale-red:hover {
+  color: #ffffff !important;
+  /* background-color: #FFA8A8 !important; */
+  background-color: #E86F68 !important;
+  border: 1px solid #c70000;
+  border-radius: 5px;
+}
+.w3-tooltip,
+.w3-display-container {
+  position: relative;
+}
+.w3-tooltip .w3-text {
+  display: none;
+}
+.w3-tooltip:hover .w3-text {
+  display: inline-block;
+}
+.w3-btn,
+.w3-button {
+  border: none;
+  display: inline-block;
+  padding: 2px 6px;
+  margin: 1px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--color-headlines);
+}
+.w3-large {
+  font-size: 18px !important;
+}
+.w3-display-topright {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+summary {
+  /*   list-style: none; */
+  /* color: #1e90ff; */
+  color: var(--color-headlines);
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:hover {
+  color: #2A9D8F;
+}
+
+a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  /*   box-shadow: 0 1px 0 0; */
+}
+
+a:hover {
+    box-shadow: 0 3px 0 0;
+}
+
+code {
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.bold-link strong {
+  font-weight: 4000 !important;
+}
